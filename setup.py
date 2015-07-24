@@ -8,7 +8,7 @@ setup(name='flavourdetect',
     url = 'http://github.com/infoscout/flavourdetect',
     version = current_version(),     
     install_requires=[
-        'django==1.4',
+        'django>=1.4',
     ]
 )
 
