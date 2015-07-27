@@ -1,12 +1,13 @@
-from setuptools import find_packages
-from isc_ops.setup_tools import setup, current_version
+from setuptools import find_packages, setup
 
+with open('VERSION','r') as f:
+    version = f.read()
 
 setup(name='flavourdetect',
     packages=find_packages(),  
     description = 'Django app detects the user device and serves up the appropriate template.',
     url = 'http://github.com/infoscout/flavourdetect',
-    version = current_version(),     
+    version = version,     
     install_requires=[
         'django>=1.4',
     ]
