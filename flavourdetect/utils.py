@@ -21,7 +21,7 @@ def flavour_detect(request):
     if request.GET.get('flavour', None):
         return request.GET.get('flavour').upper()
 
-    if not request.META.has_key('HTTP_USER_AGENT'):
+    if 'HTTP_USER_AGENT' not in request.META:
         return None
 
     user_agent = request.META['HTTP_USER_AGENT'].lower()
