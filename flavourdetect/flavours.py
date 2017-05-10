@@ -1,5 +1,5 @@
-
 class Flavour:
+
     DESKTOP = 'DESKTOP'
     MOBILE = 'MOBILE'
     IOS = 'IOS'
@@ -8,8 +8,8 @@ class Flavour:
     IPHONE = 'IPHONE'
     ANDROID = 'ANDROID'
     BLACKBERRY = 'BLACKBERRY'
-    
-    
+
+
 """
 Provides a heirarchy of flavours in a dict
 as child => parent pairs
@@ -22,4 +22,3 @@ flavour_parents = {
     Flavour.ANDROID: Flavour.MOBILE,
     Flavour.BLACKBERRY: Flavour.MOBILE
 }
-    
