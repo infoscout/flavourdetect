@@ -18,7 +18,7 @@ def flavour_detect(request):
     """
 
     # Check first if manually provided as GET param
-    if request.GET.get('flavour', None):
+    if request.GET.get('flavour'):
         return request.GET.get('flavour').upper()
 
     if 'HTTP_USER_AGENT' not in request.META:
