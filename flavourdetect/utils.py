@@ -57,7 +57,7 @@ def template_list(request, template_name):
 
     # If no flavour, just return base template name
     if not flavour:
-        return [template_name,]
+        return [template_name]
 
     # Append flavour (and all parent flavours) to list
     templates = []
