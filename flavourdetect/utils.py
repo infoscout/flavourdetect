@@ -88,17 +88,6 @@ def all_flavours(flavour):
     return l
 
 
-def flavour_render(request, *args, **kwargs):
-    """
-    Wrapper for the render() django call. Appends
-    flavour templates
-    """
-    args = list(args)
-    args[0] = template_list(request, args[0])
-
-    return render(request, *args, **kwargs)
-
-
 class FlavourTemplateResponseMixin(TemplateResponseMixin):
     """
     Wrapper for TemplateResponseMixIn class. Appends flavour templates
