@@ -109,7 +109,6 @@ class FlavourTemplateResponseMixin(TemplateResponseMixin):
         Returns a list of template names to be used for the request.
         Must return a list. May not be called if render_to_response is overridden.
         """
-
         if self.template_name is None:
             raise ImproperlyConfigured(
                 "TemplateResponseMixin requires either a definition of "
