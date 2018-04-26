@@ -5,7 +5,7 @@ Django app helping detect the user device and serving up the appropriate templat
 
 ### Detecting the device
 
-The HTTP_USER_AGENT is parsed to detect the users device. It will return a value from the class provided in `flavourdetect.flavours`.
+The `HTTP_USER_AGENT` header is parsed to detect the users device. It will return a value from the class provided in `flavourdetect.flavours`.
 
 In addition to returning a single flavour, a heirarchy of flavours is defined in `flavourdetect.flavours`. For example: IPHONE => IOS => MOBILE. To return all parent flavours, run:
 
@@ -37,4 +37,4 @@ The app will render the template with the lowest level possible. For example, fo
     page-mobile.html
     page-html
 
-In this particular example, page-mobile.html would be rendered. 
+In this particular example, `page-mobile.html` would be rendered.
