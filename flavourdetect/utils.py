@@ -1,7 +1,6 @@
 import os.path
 
 from django.core.exceptions import ImproperlyConfigured
-from django.shortcuts import render
 from django.views.generic.base import TemplateResponseMixin
 
 from flavourdetect.flavours import Flavour, flavour_parents
@@ -88,17 +87,6 @@ def all_flavours(flavour):
     return l
 
 
-def flavour_render(request, *args, **kwargs):
-    """
-    Wrapper for the render() django call. Appends
-    flavour templates
-    """
-    args = list(args)
-    args[0] = template_list(request, args[0])
-
-    return render(request, *args, **kwargs)
-
-
 class FlavourTemplateResponseMixin(TemplateResponseMixin):
     """
     Wrapper for TemplateResponseMixIn class. Appends flavour templates
@@ -109,7 +97,6 @@ class FlavourTemplateResponseMixin(TemplateResponseMixin):
         Returns a list of template names to be used for the request.
         Must return a list. May not be called if render_to_response is overridden.
         """
-
         if self.template_name is None:
             raise ImproperlyConfigured(
                 "TemplateResponseMixin requires either a definition of "
