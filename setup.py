@@ -5,6 +5,7 @@ from setuptools import Command, find_packages, setup
 with open('VERSION', 'r') as f:
     version = f.read().strip()
 
+
 class TestCommand(Command):
 
     user_options = []
@@ -30,14 +31,12 @@ class TestCommand(Command):
             INSTALLED_APPS=(
                 'django.contrib.auth',
                 'django.contrib.contenttypes',
-                'django.contrib.sessions',
                 'flavourdetect',
             )
-            # MIDDLEWARE=('django.contrib.sessions.middleware.SessionMiddleware',),
-            # MIDDLEWARE_CLASSES=('django.contrib.sessions.middleware.SessionMiddleware',),  # Django < 1.10
         )
         django.setup()
         call_command('test', 'flavourdetect')
+
 
 setup(
     name='flavourdetect',

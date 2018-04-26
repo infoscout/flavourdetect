@@ -1,7 +1,6 @@
 import os.path
 
 from django.core.exceptions import ImproperlyConfigured
-from django.shortcuts import render
 from django.views.generic.base import TemplateResponseMixin
 
 from flavourdetect.flavours import Flavour, flavour_parents
