@@ -1,5 +1,7 @@
 # FlavourDetect
 
+[![CircleCI](https://circleci.com/gh/infoscout/flavourdetect.svg?style=svg)](https://circleci.com/gh/infoscout/flavourdetect)
+
 Django app helping detect the user device and serving up the appropriate template.
 
 

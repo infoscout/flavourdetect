@@ -1,0 +1,15 @@
+version: 2
+jobs:
+  test-py27
+    docker:
+      - image: circleci/python:2.7
+steps:
+  - checkout
+  - run:
+      name: Run tests
+
+workflows:
+  version: 2
+  test:
+    jobs:
+      - test-py27
