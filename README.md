@@ -37,9 +37,4 @@ The app will render the template with the lowest level possible. For example, fo
     page-mobile.html
     page-html
 
-In this particular example, page-mobile.html would be rendered. To render a device specific template, the `flavour_render` is your method:
-
-    # views.py
-    from flavourdetect.utils import flavour_render
-    ...
-    return flavour_render(request, 'page.html', context)
+In this particular example, page-mobile.html would be rendered. 

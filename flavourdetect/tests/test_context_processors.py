@@ -1,7 +1,7 @@
 from django.test import RequestFactory, TestCase
 
-from flavourdetect.flavours import Flavour
 from flavourdetect.context_processors import flavour
+from flavourdetect.flavours import Flavour
 
 
 class FlavoursTestCase(TestCase):
@@ -17,7 +17,6 @@ class FlavoursTestCase(TestCase):
         """
         Verify flavour() returns correct flavour and hierarchy
         """
-
         request = self.factory.get('/foo')
         request.flavour = Flavour.IPAD
 

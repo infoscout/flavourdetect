@@ -16,7 +16,6 @@ class UtilsTestCase(TestCase):
         """
         Verify correct flavor returned after get request
         """
-
         # testing flavour passed but no user_agent present
         request = self.factory.get('/foo?flavour=iphone')
         flavour = flavour_detect(request)
@@ -52,7 +51,6 @@ class UtilsTestCase(TestCase):
         """
         Verify template_list returns correct heirarchy
         """
-
         # test flavour passed in request
         request = self.factory.get('/foo?flavour=ipad')
         templates = template_list(request, 'template_name')
@@ -62,7 +60,7 @@ class UtilsTestCase(TestCase):
                 'template_name-ipad',
                 'template_name-ios',
                 'template_name-mobile',
-                'template_name'
+                'template_name',
             ]
         )
 

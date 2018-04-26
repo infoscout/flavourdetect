@@ -47,8 +47,5 @@ setup(
     install_requires=[
         'django>=1.4',
     ],
-    tests_require=[
-        'mock',
-    ],
     cmdclass={'test': TestCommand}
 )

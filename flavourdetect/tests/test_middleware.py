@@ -13,7 +13,6 @@ class MiddlewareTestCase(TestCase):
         self.factory = RequestFactory()
 
     def test_process_request(self):
-
         # set up instance of class and pass flavour
         view_for_response_mixin = FlavourDetectMiddleware()
         request = self.factory.get('/foo?flavour=iphone')
