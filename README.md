@@ -38,3 +38,16 @@ The app will render the template with the lowest level possible. For example, fo
     page-html
 
 In this particular example, `page-mobile.html` would be rendered.
+
+To render a device-specific template, you can use the `FlavourTemplateResponseMixin` in your class-based views:
+```python
+from django.views.generic import TemplateView
+from flavourdetect.utils import FlavourTemplateResponseMixin
+
+
+class MyPage(FlavourTemplateResponseMixin, TemplateView):
+
+    template_name = 'page.html'
+```
+
+The `FlavourTemplateResponseMixin` will use the appropriate template (in this case `page-mobile.html`) depending on the flavour of the device.
