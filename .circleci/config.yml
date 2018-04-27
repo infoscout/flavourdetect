@@ -21,3 +21,4 @@ jobs:
           name: Run tests with tox
           command: |
             source venv/bin/activate
+            echo $DJANGO_VERSIONS | tr ";" "\n" | xargs -L 1 -I % tox -e dj%
