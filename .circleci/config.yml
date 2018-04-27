@@ -5,7 +5,6 @@ jobs:
       - image: circleci/python:2.7
     environment:
       - DJANGO_VERSIONS: "18;19;110;111"
-    working_directory: ~/repo
 
     steps:
       - checkout
