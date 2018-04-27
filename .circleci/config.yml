@@ -5,18 +5,18 @@ jobs:
       - image: circleci/python:2.7
     environment:
       - DJANGO_VERSIONS: "18;19;110;111"
-steps:
-  - checkout
-  - run:
-      name: Setup a virtualenv
-      command: virtualenv venv
-  - run:
-      name: Install tox
-      command: |
-        source venv/bin/activate
-        pip install tox
-  - run:
-      name: Run tests with tox
-      command: |
-        source venv/bin/activate
-        echo $DJANGO_VERSIONS | tr ";" "\n" | xargs -L 1 -I % tox -e dj%
+  steps:
+    - checkout
+    - run:
+        name: Setup a virtualenv
+        command: virtualenv venv
+    - run:
+        name: Install tox
+        command: |
+          source venv/bin/activate
+          pip install tox
+    - run:
+        name: Run tests with tox
+        command: |
+          source venv/bin/activate
+          echo $DJANGO_VERSIONS | tr ";" "\n" | xargs -L 1 -I % tox -e dj%
