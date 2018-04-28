@@ -1,5 +1,8 @@
 # FlavourDetect
 
+[![CircleCI](https://circleci.com/gh/infoscout/flavourdetect/tree/master.svg?style=svg)](https://circleci.com/gh/infoscout/flavourdetect/tree/master)
+[![codecov](https://codecov.io/gh/infoscout/flavourdetect/branch/master/graph/badge.svg)](https://codecov.io/gh/infoscout/flavourdetect)
+
 Django app helping detect the user device and serving up the appropriate template.
 
 
