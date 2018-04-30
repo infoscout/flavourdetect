@@ -44,8 +44,21 @@ setup(
     description='Django app detects the user device and serves up the appropriate template.',
     url='http://github.com/infoscout/flavourdetect',
     version=version,
+    classifiers=[
+        'Environment :: Web Environment',
+        'Framework :: Django',
+        'Framework :: Django :: 1.8',
+        'Framework :: Django :: 1.9',
+        'Framework :: Django :: 1.10',
+        'Framework :: Django :: 1.11',
+        'Intended Audience :: Developers',
+        'Operating System :: OS Independent',
+        'Programming Language :: Python',
+        'Programming Language :: Python :: 2.7',
+        'Topic :: Utilities',
+    ],
     install_requires=[
-        'django>=1.4',
+        'Django >= 1.8, 2.0a0',
     ],
     cmdclass={'test': TestCommand}
 )
