@@ -60,5 +60,9 @@ setup(
     install_requires=[
         'Django >= 1.8, < 2.0a0',
     ],
+    tests_require=[
+        'pylint',
+        'flake8',
+    ],
     cmdclass={'test': TestCommand}
 )
