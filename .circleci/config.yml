@@ -45,6 +45,6 @@ workflows:
   build-and-lintcheck:
     jobs:
       - build
-      - lintcheck:
+      - lint-checks:
           requires:
             - build
