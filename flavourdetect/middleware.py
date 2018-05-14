@@ -1,3 +1,7 @@
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
+
+
 try:
     from django.utils.deprecation import MiddlewareMixin
 except ImportError:  # Django < 1.10 support
