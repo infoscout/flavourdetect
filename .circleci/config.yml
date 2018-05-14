@@ -23,7 +23,7 @@ jobs:
           command: |
             source venv/bin/activate
             PYTHONPATH=/usr/local/lib/python3.6/site-packages/isc_style_guide/checkers pylint
-  test-py27:
+  test-py27: &test-template
     docker:
       - image: circleci/python:2.7
     environment:
