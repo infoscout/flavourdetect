@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-import os
 from setuptools import Command, find_packages, setup
 
 
@@ -44,7 +43,8 @@ class TestCommand(Command):
 setup(
     name='flavourdetect',
     packages=find_packages(),
-    description='Django app detects the user device and serves up the appropriate template.',
+    description='Django app detects the user device and serves up the '
+                'appropriate template.',
     url='http://github.com/infoscout/flavourdetect',
     version=version,
     classifiers=[
