@@ -22,7 +22,7 @@ jobs:
           name: Lint with Pylint (custom checks)
           command: |
             source venv/bin/activate
-            PYTHONPATH=/home/circleci/project/venv/lib/python3.6/site-packages/isc_style_guide/checkers pylint
+            PYTHONPATH=/home/circleci/project/venv/lib/python3.6/site-packages/isc_style_guide/checkers pylint .
   test-py27: &test-template
     docker:
       - image: circleci/python:2.7
