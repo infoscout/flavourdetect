@@ -3,6 +3,8 @@ jobs:
   lint-checks:
     docker:
       - image: circleci/python:2.7
+    environment:
+      - DJANGO_VERSIONS: "18;19;110;111"
     steps:
       - checkout
       - run:
@@ -23,6 +25,7 @@ jobs:
           command: |
             source venv/bin/activate
             PYTHONPATH=/home/circleci/project/venv/lib/python3.6/site-packages/isc_style_guide/checkers pylint .
+            echo $DJANGO_VERSIONS | tr ";" "\n" | xargs -L 1 -I % tox -e dj%
   test-py27: &test-template
     docker:
       - image: circleci/python:2.7
