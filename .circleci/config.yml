@@ -17,7 +17,7 @@ jobs:
           name: Lint with flake8
           command: |
             source venv/bin/activate
-            flake8 --exclude=build/*,.svn,CVS,.bzr,.hg,.git,__pycache__,.eggs,*.egg,.tox,*/migrations/*
+            flake8 --exclude=build/*,.svn,CVS,.bzr,.hg,.git,__pycache__,.eggs,*.egg,.tox,*/venv/*,*.pyc
       - run:
           name: Lint with Pylint (custom checks)
           command: |
