@@ -105,7 +105,7 @@ class FlavourTemplateResponseMixin(TemplateResponseMixin):
             raise ImproperlyConfigured(
                 "TemplateResponseMixin requires either a definition of "
                 "'template_name' or an implementation of "
-                " 'get_template_names()'"
+                "'get_template_names()'"
             )
         else:
             return template_list(self.request, self.template_name)

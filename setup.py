@@ -43,8 +43,10 @@ class TestCommand(Command):
 setup(
     name='flavourdetect',
     packages=find_packages(),
-    description='Django app detects the user device and serves up the '
-                'appropriate template.',
+    description=(
+        'Django app detects the user device and serves up the '
+        'appropriate template.'
+    ),
     url='http://github.com/infoscout/flavourdetect',
     version=version,
     classifiers=[
@@ -64,10 +66,6 @@ setup(
     ],
     install_requires=[
         'Django >= 1.8, < 2.1a0'
-    ],
-    tests_require=[
-        'pylint',
-        'flake8',
     ],
     cmdclass={'test': TestCommand}
 )
