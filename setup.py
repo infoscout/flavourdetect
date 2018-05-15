@@ -63,7 +63,7 @@ setup(
         'Topic :: Utilities',
     ],
     install_requires=[
-        'Django >= 1.8, < 2.1a0',
+        'Django >= 1.8, < 2.1a0'
     ],
     tests_require=[
         'pylint',
