@@ -2,7 +2,7 @@ version: 2
 jobs:
   lint-checks:
     docker:
-      - image: circleci/python:2.7
+      - image: circleci/python:3.6
     steps:
       - checkout
       - run:
