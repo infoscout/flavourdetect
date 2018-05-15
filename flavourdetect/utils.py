@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
+
 import os.path
 
 from django.core.exceptions import ImproperlyConfigured
@@ -76,15 +79,15 @@ def all_flavours(flavour):
     Returns the flavour and it's parents
     as a list
     """
-    l = [flavour]
+    flavour_list = [flavour]
     _flavour = flavour
     while(True):
         if _flavour not in flavour_parents:
             break
         _flavour = flavour_parents[_flavour]
-        l.append(_flavour)
+        flavour_list.append(_flavour)
 
-    return l
+    return flavour_list
 
 
 class FlavourTemplateResponseMixin(TemplateResponseMixin):
@@ -95,12 +98,14 @@ class FlavourTemplateResponseMixin(TemplateResponseMixin):
     def get_template_names(self):
         """
         Returns a list of template names to be used for the request.
-        Must return a list. May not be called if render_to_response is overridden.
+        Must return a list. May not be called if render_to_response is
+        overridden.
         """
         if self.template_name is None:
             raise ImproperlyConfigured(
                 "TemplateResponseMixin requires either a definition of "
-                "'template_name' or an implementation of 'get_template_names()'"
+                "'template_name' or an implementation of "
+                "'get_template_names()'"
             )
         else:
             return template_list(self.request, self.template_name)
