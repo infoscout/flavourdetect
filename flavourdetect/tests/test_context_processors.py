@@ -28,3 +28,7 @@ class ContextProcessorTestCase(TestCase):
             flavour_dict,
             {'flavours': ['IPAD', 'IOS', 'MOBILE'], 'flavour': 'IPAD'}
         )
+
+    def test_context_processor_without_middleware(self):
+        request = self.factory.get('/foo')
+        self.assertDictEqual(flavour(request), {})

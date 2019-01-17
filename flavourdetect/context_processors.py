@@ -5,7 +5,13 @@ from flavourdetect.utils import all_flavours
 
 
 def flavour(request):
+    # Skip context processor if FlavourDetectMiddleware has not executed yet
+    if not hasattr(request, 'flavour'):
+        return {}
+
+    # Add the flavour and all flavours to the context
+    flavour = request.flavour
     return {
-        'flavour': request.flavour,
-        'flavours': all_flavours(request.flavour),
+        'flavour': flavour,
+        'flavours': all_flavours(flavour),
     }
