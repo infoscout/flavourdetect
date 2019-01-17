@@ -7,7 +7,7 @@ from flavourdetect.context_processors import flavour
 from flavourdetect.flavours import Flavour
 
 
-class FlavoursTestCase(TestCase):
+class ContextProcessorTestCase(TestCase):
     """
     Verify context_processors.py file functions correctly
     """
@@ -16,9 +16,9 @@ class FlavoursTestCase(TestCase):
         # Every test needs access to the request factory.
         self.factory = RequestFactory()
 
-    def test_flavour(self):
+    def test_context_processor(self):
         """
-        Verify flavour() returns correct flavour and hierarchy
+        Verify context processor returns correct flavour and hierarchy
         """
         request = self.factory.get('/foo')
         request.flavour = Flavour.IPAD
@@ -28,3 +28,7 @@ class FlavoursTestCase(TestCase):
             flavour_dict,
             {'flavours': ['IPAD', 'IOS', 'MOBILE'], 'flavour': 'IPAD'}
         )
+
+    def test_context_processor_without_middleware(self):
+        request = self.factory.get('/foo')
+        self.assertDictEqual(flavour(request), {})
