@@ -3,7 +3,6 @@ from __future__ import unicode_literals
 
 from setuptools import Command, find_packages, setup
 
-
 with open('VERSION', 'r') as f:
     version = f.read().strip()
 
@@ -65,7 +64,7 @@ setup(
         'Topic :: Utilities',
     ],
     install_requires=[
-        'Django >= 1.8, < 2.1a0'
+        'Django >= 1.8, < 3.1a0'
     ],
     cmdclass={'test': TestCommand}
 )
