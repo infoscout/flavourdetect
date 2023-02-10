@@ -81,7 +81,7 @@ def all_flavours(flavour):
     """
     flavour_list = [flavour]
     _flavour = flavour
-    while(True):
+    while True:
         if _flavour not in flavour_parents:
             break
         _flavour = flavour_parents[_flavour]
